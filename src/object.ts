@@ -39,6 +39,17 @@ export class Object {
   }
 
   /**
+   * Destroy
+   * 
+   * Removes the object from the DOM and
+   * the firebase DB
+   */
+  destroy() {
+    document.body.removeChild(this.element);
+    this.ref.remove();
+  }
+
+  /**
    * Update Position
    * 
    * Updates the position in firebase.
