@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 
 import { getRandomHexColor } from './utils';
 
-interface ObjectPosition {
+interface EntityPosition {
   top: number;
   left: number;
 }
@@ -12,12 +12,12 @@ const DEFAULT_POSITION = {
   left: 0
 };
 
-export class Object {
+export class Entity {
   ref: firebase.database.Reference;
   element: HTMLElement;
-  pos: ObjectPosition;
+  pos: EntityPosition;
 
-  constructor(pos?: ObjectPosition, elemClass?: string) {
+  constructor(pos?: EntityPosition, elemClass?: string) {
     // does not actually modify database. just returns a ref
     // to a firebase database object with a generated key.
     this.ref = firebase.database().ref().push();
