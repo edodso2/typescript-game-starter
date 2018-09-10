@@ -69,8 +69,12 @@ export class PlayerListener {
   }
 
   private shootParticle() {
+    // get starting position of particle
+    let top = this.player.pos.top + 2.5;
+    let left = this.player.pos.left + 2.5;
+
     // create particle
-    const particleElem = new Particle();
+    const particleElem = new Particle({ top, left});
 
     // get current keys pressed when particle fired
     const currentKeys = new Set(this.pressedKeys);
@@ -79,9 +83,6 @@ export class PlayerListener {
     if (currentKeys.size === 0) {
       currentKeys.add('38');
     }
-
-    let top = this.player.pos.top + 2.5;
-    let left = this.player.pos.left + 2.5;
 
     const particleInterval = setInterval(() => {
       ({ top, left } = this.updateCoords(currentKeys, top, left));
