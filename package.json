@@ -1,0 +1,28 @@
+{
+  "name": "typescript-webpack-starter",
+  "version": "0.0.1",
+  "description": "A very barebones starter project typescript development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -p ./",
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "webpack-dev-server --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.2",
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "@types/firebase": "^3.2.1",
+    "firebase": "^4.11.0"
+  }
+}

@@ -1,0 +1,27 @@
+.player {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  font-size: 8px;
+  text-align: center;
+  color: #fff;
+  background-color: #07c;
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
