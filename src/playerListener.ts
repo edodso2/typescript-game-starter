@@ -48,7 +48,7 @@ export class PlayerListener {
 
     this.movingInterval = setInterval(() => {
       ({ top, left } = this.updateCoords(this.pressedKeys, top, left));
-      this.player.setPosition(top, left);
+      this.player.setPersistedPosition(top, left);
     }, 5);
 
     // space bar click

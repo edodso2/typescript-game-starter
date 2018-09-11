@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 
 import { getRandomHexColor } from './utils';
 
-interface EntityPosition {
+export interface EntityPosition {
   top: number;
   left: number;
 }
@@ -12,30 +12,32 @@ const DEFAULT_POSITION = {
   left: 0
 };
 
+/**
+ * The base entity class. Everything shown on the screen
+ * is derived from this class in some way.
+ */
 export class Entity {
-  ref: firebase.database.Reference;
   element: HTMLElement;
   pos: EntityPosition;
 
   constructor(pos?: EntityPosition, elemClass?: string) {
-    // does not actually modify database. just returns a ref
-    // to a firebase database object with a generated key.
-    this.ref = firebase.database().ref().push();
     this.pos = pos || DEFAULT_POSITION;
     this.element = this.createHtmlElement(elemClass);
+
+    this.setPosition(this.pos.top, this.pos.left);
   }
 
   /**
    * Set Position
-   * 
-   * Sets the position of the player
+   * Sets the position of an entity.
+   * @param top distance of entity from the top of the screen
+   * @param left distance of entity from the left of the screen
    */
   setPosition(top: number, left: number) {
     this.pos.top = top;
     this.pos.left = left;
     this.element.style.top = top + 'px';
     this.element.style.left = left + 'px';
-    this.updatePos(top, left);
   }
 
   /**
@@ -46,21 +48,6 @@ export class Entity {
    */
   destroy() {
     document.body.removeChild(this.element);
-    this.ref.remove();
-  }
-
-  /**
-   * Update Position
-   * 
-   * Updates the position in firebase.
-   * TODO: possibly move all firebase realted code
-   * to one file.
-   */
-  private updatePos(top, left) {
-    this.ref.set({
-      top,
-      left
-    });
   }
 
   /**

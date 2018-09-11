@@ -3,7 +3,7 @@
         "module": "commonjs",
         "moduleResolution":"node",
         "target":"es5",
-        "lib": ["es5", "es6", "dom"],
+        "lib": ["es5", "es6", "es2018.promise", "dom"],
         "sourceMap": true,
         "inlineSources": true,
         "pretty": true
