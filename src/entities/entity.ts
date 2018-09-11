@@ -1,6 +1,4 @@
-import * as firebase from 'firebase';
-
-import { getRandomHexColor } from './utils';
+import { getRandomHexColor } from '../utils';
 
 export interface EntityPosition {
   top: number;

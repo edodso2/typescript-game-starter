@@ -1,5 +1,5 @@
-import { Player } from './player';
-import { Particle } from './particle';
+import { Player } from './entities/player';
+import { Particle } from './entities/particle';
 
 const ARROW_KEYS = {
   UP: '38',

@@ -1,8 +1,8 @@
 import * as firebase from 'firebase';
 import { config } from './config';
-import { Player } from './player';
+import { Player } from './entities/player';
 import { PlayerListener } from './playerListener';
-import { Entity } from './entity';
+import { Entity } from './entities/entity';
 
 /**
  * Game Class
